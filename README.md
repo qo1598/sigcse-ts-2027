@@ -19,9 +19,8 @@ rubric-scored.
 | `mission_scoring_map.md` | The 12 missions: construct, grade band, aligned K/S/A codes, scoring criteria, and the **rule answer keys** (which choices count as correct). Human-readable summary of the code below. |
 | `e_domain_rubric.js` | Canonical **rubric definitions** — for each criterion: which response field it scores, scoring type (`rule` / `pattern` / `llm_judge`), 0/1/2 level cutoffs, and aligned KSA codes. |
 | `ruleScorers.js` | Canonical **deterministic scorers** — the exact answer-key constants and logic that map a raw student response to a rule score. This is the authoritative source; `mission_scoring_map.md` summarizes it. |
-
-> To assemble the public repo, copy the two `.js` files from
-> `src/data/rubrics/{e_domain_rubric.js, ruleScorers.js}` next to this README.
+| `rubricPrompt.js` | The **LLM grading prompts** — `buildSystemPrompt` / `buildUserPrompt` construct the exact instructions sent to each model, and `sanitizeAnswers` strips images and any non-response fields so only the rubric and the student's answer text are sent (no identifiers). |
+| `multiModelRubricService.js` | The **three-model panel + majority vote** — calls Gemini 3.5 Flash, Claude Haiku 4.5, and GPT-5.4 on the same prompt (temperature 0.2, JSON mode) and combines per-criterion votes (unanimous / 2-of-3; three-way split or tie flagged for review). |
 
 ## Scoring methodology (as reported in the paper)
 
