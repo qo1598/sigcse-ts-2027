@@ -32,8 +32,9 @@ rubric-scored.
   performance score).
 - **`llm_judge` (open reasoning).** Free-text artifacts in the middle/upper bands,
   scored 0–2 by a three-model LLM panel (majority vote). Used **only** in the
-  exploratory measurement check; a blind human-scoring check is reported in the paper
-  (inter-rater weighted κ = 0.95; human↔LLM κ = 0.61).
+  exploratory measurement check; a blind 3-rater human-scoring check is reported in the
+  paper (random one-third of the focal mission, N = 107; inter-rater Krippendorff's
+  α = 0.96, ICC(2,k) = 0.99; human↔LLM κ = 0.39).
 
 ## Reproducing a performance score
 
