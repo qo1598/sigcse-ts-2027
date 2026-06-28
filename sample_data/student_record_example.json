@@ -1,0 +1,111 @@
+{
+  "_comment": "SYNTHETIC / DUMMY DATA — not real students. Illustrates the data shape collected per mission (focal E-2-M, 'Can we trust the answer?') and how it maps to the 0-1 performance and self-report scores used in the paper. No real responses are released (IRB/consent). IDs are fake placeholders, not the real enrollment codes.",
+  "mission_code": "E-2-M",
+  "grade_band": "M",
+  "records": [
+    {
+      "student_id": "DEMO-STUDENT-A",
+      "note": "high performer + high self-report",
+      "mission_submission_v4": {
+        "answers": {
+          "step2": {
+            "a1": { "selected": false },
+            "a2": { "selected": false },
+            "a3": { "selected": true,  "reason": "wrong_fact" },
+            "a4": { "selected": false },
+            "a5": { "selected": false },
+            "a6": { "selected": true,  "reason": "wrong_fact" }
+          },
+          "step3": {
+            "a3": "곰은 포유류 아니야? 새끼를 낳고 젖을 먹이잖아",
+            "a6": "개가 정말 흑백만 봐? 출처가 어디야?"
+          },
+          "step4": {
+            "a1": { "judgment": "use" },
+            "a2": { "judgment": "use" },
+            "a3": { "judgment": "hold" },
+            "a4": { "judgment": "use" },
+            "a5": { "judgment": "use" },
+            "a6": { "judgment": "hold" }
+          },
+          "step5": ["verify_facts", "cross_check"]
+        }
+      },
+      "rubric_scores_derived": {
+        "_how": "Produced by ruleScorers.js on the answers above (max 2 each). a1/b1/c1/c2 are the rule criteria; b2 is the open (LLM/human) criterion and is NOT part of the performance score.",
+        "a1_flag_false_bubbles": 2,
+        "b1_reason_for_false": 2,
+        "c1_use_or_hold": 2,
+        "c2_safe_attitude": 2,
+        "b2_confirmation_question_open": 2,
+        "performance_0to1": 1.0
+      },
+      "post_mission_evaluation": {
+        "mission_code": "E-2-M",
+        "grade_band": "M",
+        "k_responses": { "K4.3": 5 },
+        "s_responses": { "S.critical_thinking": 4 },
+        "a_responses": { "A.responsible": 5 },
+        "difficulty_rating": 3,
+        "ai_helpfulness_rating": 4,
+        "self_report_0to1_derived": 0.933
+      }
+    },
+    {
+      "student_id": "DEMO-STUDENT-B",
+      "note": "partial performer + still fairly high self-report (illustrates the say-do gap)",
+      "mission_submission_v4": {
+        "answers": {
+          "step2": {
+            "a1": { "selected": true,  "reason": "wrong_fact" },
+            "a2": { "selected": false },
+            "a3": { "selected": true,  "reason": "wrong_fact" },
+            "a4": { "selected": false },
+            "a5": { "selected": false },
+            "a6": { "selected": false }
+          },
+          "step3": {
+            "a1": "맞아요?",
+            "a3": "곰은 동물 아니야?"
+          },
+          "step4": {
+            "a1": { "judgment": "use" },
+            "a2": { "judgment": "use" },
+            "a3": { "judgment": "hold" },
+            "a4": { "judgment": "use" },
+            "a5": { "judgment": "use" },
+            "a6": { "judgment": "use" }
+          },
+          "step5": ["ask_many"]
+        }
+      },
+      "rubric_scores_derived": {
+        "_how": "a1: one true hit (a3) but one false positive (a1) -> 1. b1: a6 not flagged -> not both correct -> 1. c1: a1 flagged but judged 'use' (inconsistent) -> 1. c2: contains the discouraged chip 'ask_many' -> 1.",
+        "a1_flag_false_bubbles": 1,
+        "b1_reason_for_false": 1,
+        "c1_use_or_hold": 1,
+        "c2_safe_attitude": 1,
+        "b2_confirmation_question_open": 1,
+        "performance_0to1": 0.5
+      },
+      "post_mission_evaluation": {
+        "mission_code": "E-2-M",
+        "grade_band": "M",
+        "k_responses": { "K4.3": 4 },
+        "s_responses": { "S.critical_thinking": 3 },
+        "a_responses": { "A.responsible": 4 },
+        "difficulty_rating": 3,
+        "ai_helpfulness_rating": 3,
+        "self_report_0to1_derived": 0.733
+      }
+    }
+  ],
+  "pre_survey_example": {
+    "_comment": "SYNTHETIC. Anonymous general-KSA pre-survey row (grade only, no identifiers). 5-point Likert per item; full item wording in survey_items.md.",
+    "grade": 4,
+    "context": { "CTX2_usage_freq": 3, "CTX5_prior_ai_learning": "yes" },
+    "K": { "K1.4": 4, "K4.3": 5, "K3.3": 4, "K2.5": 3 },
+    "S": { "S1": 4, "S3": 3 },
+    "A": { "A1": 5, "A2": 4 }
+  }
+}

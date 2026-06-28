@@ -21,6 +21,8 @@ rubric-scored.
 | `ruleScorers.js` | Canonical **deterministic scorers** — the exact answer-key constants and logic that map a raw student response to a rule score. This is the authoritative source; `mission_scoring_map.md` summarizes it. |
 | `rubricPrompt.js` | The **LLM grading prompts** — `buildSystemPrompt` / `buildUserPrompt` construct the exact instructions sent to each model, and `sanitizeAnswers` strips images and any non-response fields so only the rubric and the student's answer text are sent (no identifiers). |
 | `multiModelRubricService.js` | The **three-model panel + majority vote** — calls Gemini 3.5 Flash, Claude Haiku 4.5, and GPT-5.4 on the same prompt (temperature 0.2, JSON mode) and combines per-criterion votes (unanimous / 2-of-3; three-way split or tie flagged for review). |
+| `survey_items.md` | The **self-report instrument** — full item wording for the pre-instruction general-KSA survey and the task-proximal post-mission KSA survey, with the 5-point pictorial Likert scale. Questions only; no student responses. |
+| `sample_data/` | **Synthetic** example records (focal mission E-2-M) showing the raw `answers` JSON, the derived rule scores, and the post-mission self-report — so the data shape and scoring are concrete. Not real student data. |
 
 ## Scoring methodology (as reported in the paper)
 
