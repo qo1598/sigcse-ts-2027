@@ -24,7 +24,7 @@ rubric-scored.
 | `survey_items.md` | The **self-report instrument** — full item wording for the pre-instruction general-KSA survey and the task-proximal post-mission KSA survey, with the 5-point pictorial Likert scale. Questions only; no student responses. |
 | `sample_data/` | **Synthetic** example records (focal mission E-2-M) showing the raw `answers` JSON, the derived rule scores, and the post-mission self-report — so the data shape and scoring are concrete. Not real student data. |
 
-## Scoring methodology (as reported in the paper)
+## Scoring methodology
 
 - **`rule` (deterministic).** The response is compared against a fixed answer key
   (see `mission_scoring_map.md`). The same response always yields the same score, so
