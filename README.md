@@ -45,13 +45,3 @@ rubric-scored.
 2. For the mission's rule criteria, apply the matching scorer in `ruleScorers.js`.
 3. Normalize: performance (0–1) = mean(rule-criterion scores) / max per criterion.
 
-## Pre-submission checklist (maintainers)
-
-- [x] Copy `e_domain_rubric.js` and `ruleScorers.js` into this folder. *(done; both are
-      standalone — no imports)*
-- [x] Scan all files for any author / institution / school string (anonymization). *(clean)*
-- [ ] Push this `replication/` folder to a **new, dedicated** public GitHub repo
-      (not the full platform repo).
-- [ ] Submit that repo to `anonymous.4open.science`; paste the anonymized URL into the
-      paper footnote (currently a placeholder `…/r/ailit-engaging`).
-- [ ] At camera-ready: replace the anonymized link with the de-anonymized repository.
