@@ -24,7 +24,7 @@ rubric-scored.
 | `survey_items.md` | The **self-report instrument** — full item wording for the pre-instruction general-KSA survey and the task-proximal post-mission KSA survey, with the 5-point pictorial Likert scale. Questions only; no student responses. |
 | `sample_data/` | **Synthetic** example records (focal mission E-2-M) showing the raw `answers` JSON, the derived rule scores, and the post-mission self-report — so the data shape and scoring are concrete. Not real student data. |
 
-## Scoring methodology
+## Scoring methodology (as reported in the paper)
 
 - **`rule` (deterministic).** The response is compared against a fixed answer key
   (see `mission_scoring_map.md`). The same response always yields the same score, so
@@ -44,3 +44,14 @@ rubric-scored.
    of `ruleScorers.js`).
 2. For the mission's rule criteria, apply the matching scorer in `ruleScorers.js`.
 3. Normalize: performance (0–1) = mean(rule-criterion scores) / max per criterion.
+
+## Pre-submission checklist (maintainers)
+
+- [x] Copy `e_domain_rubric.js` and `ruleScorers.js` into this folder. *(done; both are
+      standalone — no imports)*
+- [x] Scan all files for any author / institution / school string (anonymization). *(clean)*
+- [ ] Push this `replication/` folder to a **new, dedicated** public GitHub repo
+      (not the full platform repo).
+- [ ] Submit that repo to `anonymous.4open.science`; paste the anonymized URL into the
+      paper footnote (currently a placeholder `…/r/ailit-engaging`).
+- [ ] At camera-ready: replace the anonymized link with the de-anonymized repository.
